@@ -1,0 +1,23 @@
+package Starting.Recursion;
+
+public class SubSequences {
+    public static void subsequences(String str, int idx, String newString){
+        if (idx == str.length()){
+            System.out.println(newString);
+            return;
+        }
+
+        char currChar = str.charAt(idx);
+        // to be
+        subsequences(str, idx+1, newString+currChar);
+
+        // or not to be
+        subsequences(str, idx+1, newString);
+    }
+
+    public static void main(String[] args) {
+        String str = "abc";
+        subsequences(str,0,"");
+    }
+}
+// Time Comlexity: O(2^n)
